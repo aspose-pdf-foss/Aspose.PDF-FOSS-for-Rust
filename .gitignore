@@ -1,0 +1,16 @@
+# Cargo build artefacts
+/target/
+/Cargo.lock
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Test scratch
+/tmp/
+*.tmp.bin

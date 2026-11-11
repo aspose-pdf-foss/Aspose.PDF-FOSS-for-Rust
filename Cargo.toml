@@ -1,0 +1,574 @@
+[package]
+name = "aspose-pdf-foss"
+version = "1.26.11"
+edition = "2021"
+rust-version = "1.86"
+license = "MIT AND OFL-1.1"
+description = "Free, open-source Rust library for working with PDF documents. No dependencies."
+repository = "https://github.com/aspose-pdf-foss/Aspose.PDF-FOSS-for-Rust"
+readme = "README.md"
+keywords = ["pdf", "rendering", "text-extraction", "aspose"]
+categories = ["text-processing", "multimedia::images", "rendering"]
+
+# Paths that exist for contributors working in the repository and have no
+# business in a published package: the methodology documentation, which is
+# process material rather than part of this library, the agent tooling
+# under `.claude/` with the contributor guide that drives it, and the CI
+# configuration.
+#
+# Tests and fixtures deliberately stay in: a consumer can run the suite
+# against the published source, which is the point of shipping it.
+exclude = [
+    "docs/methodology",
+    ".claude",
+    "CLAUDE.md",
+    ".gitmodules",
+    ".gitlab-ci.yml",
+    ".github",
+]
+
+# `from_scratch only` strategy lock for the Rust track —
+# foundation primitives are composed from scratch against the
+# format spec / BCL contract. No `flate2`, no `image`, no
+# `jpeg-encoder`, no `byteorder`, no `node:zlib`-equivalent
+# shortcut crates. std-only baseline.
+#
+# Rationale: parallel to the TypeScript track lockdown — the
+# methodology is honestly tested only when the lib's primitives
+# are composed by the toolchain rather than wrapped around a
+# mature ecosystem dep. Operator may relax this rule per
+# primitive, but the default is "no" and exceptions go through
+# explicit operator-approved overlay edits.
+[dependencies]
+
+[dev-dependencies]
+
+[lib]
+path = "src/lib.rs"
+
+# Integration-test discovery — Cargo's default convention is
+# `tests/<name>.rs` (each .rs at the tests/ root is its own test
+# crate; subdirectories are shared-helper module roots, not test
+# crates). The peer cpp / csharp / typescript libs split tests into
+# `tests/internal/` (foundation freeze-gate drivers) and
+# `tests/public/` (public-API smokes). To preserve that layout
+# under cargo, every gate driver gets an explicit `[[test]]`
+# entry mapping its path. New foundation primitives append a
+# matching `[[test]]` block here as they ship.
+[[test]]
+name = "asciihex_test"
+path = "tests/internal/asciihex_test.rs"
+
+[[test]]
+name = "binarize_bradley_test"
+path = "tests/internal/binarize_bradley_test.rs"
+
+[[test]]
+name = "ascii85_test"
+path = "tests/internal/ascii85_test.rs"
+
+[[test]]
+name = "runlength_test"
+path = "tests/internal/runlength_test.rs"
+
+[[test]]
+name = "rc4_test"
+path = "tests/internal/rc4_test.rs"
+
+[[test]]
+name = "transform_test"
+path = "tests/internal/transform_test.rs"
+
+[[test]]
+name = "aes_cbc_test"
+path = "tests/internal/aes_cbc_test.rs"
+
+[[test]]
+name = "digest_test"
+path = "tests/internal/digest_test.rs"
+
+[[test]]
+name = "palette_quantiser_test"
+path = "tests/internal/palette_quantiser_test.rs"
+
+[[test]]
+name = "truetype_test"
+path = "tests/internal/truetype_test.rs"
+
+[[test]]
+name = "cff_test"
+path = "tests/internal/cff_test.rs"
+
+[[test]]
+name = "bmp_decoder_test"
+path = "tests/internal/bmp_decoder_test.rs"
+
+[[test]]
+name = "lexer_test"
+path = "tests/internal/lexer_test.rs"
+
+[[test]]
+name = "colorspace_test"
+path = "tests/internal/colorspace_test.rs"
+
+[[test]]
+name = "bmp_encoder_test"
+path = "tests/internal/bmp_encoder_test.rs"
+
+[[test]]
+name = "lzw_test"
+path = "tests/internal/lzw_test.rs"
+
+[[test]]
+name = "crypt_filter_test"
+path = "tests/internal/crypt_filter_test.rs"
+
+[[test]]
+name = "flate_test"
+path = "tests/internal/flate_test.rs"
+
+[[test]]
+name = "content_stream_test"
+path = "tests/internal/content_stream_test.rs"
+
+[[test]]
+name = "xmp_test"
+path = "tests/internal/xmp_test.rs"
+
+[[test]]
+name = "to_unicode_test"
+path = "tests/internal/to_unicode_test.rs"
+
+[[test]]
+name = "encoding_test"
+path = "tests/internal/encoding_test.rs"
+
+[[test]]
+name = "standard14_outlines_test"
+path = "tests/internal/standard14_outlines_test.rs"
+
+[[test]]
+name = "trailer_test"
+path = "tests/internal/trailer_test.rs"
+
+[[test]]
+name = "xref_test"
+path = "tests/internal/xref_test.rs"
+
+[[test]]
+name = "encrypt_parser_test"
+path = "tests/internal/encrypt_parser_test.rs"
+
+[[test]]
+name = "encrypt_writer_test"
+path = "tests/internal/encrypt_writer_test.rs"
+
+[[test]]
+name = "objects_test"
+path = "tests/internal/objects_test.rs"
+
+[[test]]
+name = "png_decoder_test"
+path = "tests/internal/png_decoder_test.rs"
+
+[[test]]
+name = "tiff_decoder_test"
+path = "tests/internal/tiff_decoder_test.rs"
+
+[[test]]
+name = "pages_tree_test"
+path = "tests/internal/pages_tree_test.rs"
+
+[[test]]
+name = "tiff_encoder_test"
+path = "tests/internal/tiff_encoder_test.rs"
+
+[[test]]
+name = "png_encoder_test"
+path = "tests/internal/png_encoder_test.rs"
+
+[[test]]
+name = "text_extractor_test"
+path = "tests/internal/text_extractor_test.rs"
+
+[[test]]
+name = "outlines_test"
+path = "tests/internal/outlines_test.rs"
+
+[[test]]
+name = "pdf_writer_incremental_test"
+path = "tests/internal/pdf_writer_incremental_test.rs"
+
+[[test]]
+name = "rasterizer_test"
+path = "tests/internal/rasterizer_test.rs"
+
+[[test]]
+name = "glyph_rasterizer_test"
+path = "tests/internal/glyph_rasterizer_test.rs"
+
+[[test]]
+name = "ccitt_test"
+path = "tests/internal/ccitt_test.rs"
+
+[[test]]
+name = "dctdecode_test"
+path = "tests/internal/dctdecode_test.rs"
+
+[[test]]
+name = "jbig2_test"
+path = "tests/internal/jbig2_test.rs"
+
+[[test]]
+name = "dct_encoder_test"
+path = "tests/internal/dct_encoder_test.rs"
+
+[[test]]
+name = "image_compositor_test"
+path = "tests/internal/image_compositor_test.rs"
+
+[[test]]
+name = "page_renderer_test"
+path = "tests/internal/page_renderer_test.rs"
+
+# Public-API smokes (Phase 4 — start of the public arc). These
+# `use aspose_pdf_foss::*` against the lib crate; unlike the
+# foundation gates in tests/internal/ they don't need `#[path]`
+# mounts because the public modules are reachable through the
+# crate's public re-exports.
+[[test]]
+name = "malformed_input_test"
+path = "tests/public/malformed_input_test.rs"
+
+[[test]]
+name = "corpus_round_trip_test"
+path = "tests/public/corpus_round_trip_test.rs"
+
+[[test]]
+name = "document_test"
+path = "tests/public/document_test.rs"
+
+[[test]]
+name = "document_encryption_test"
+path = "tests/public/document_encryption_test.rs"
+
+[[test]]
+name = "document_send_to_test"
+path = "tests/public/document_send_to_test.rs"
+
+[[test]]
+name = "page_collection_test"
+path = "tests/public/page_collection_test.rs"
+
+[[test]]
+name = "document_authoring_test"
+path = "tests/public/document_authoring_test.rs"
+
+[[test]]
+name = "page_collection_mutation_test"
+path = "tests/public/page_collection_mutation_test.rs"
+
+[[test]]
+name = "page_geometry_test"
+path = "tests/public/page_geometry_test.rs"
+
+[[test]]
+name = "document_info_test"
+path = "tests/public/document_info_test.rs"
+
+[[test]]
+name = "xmp_value_test"
+path = "tests/public/xmp_value_test.rs"
+
+[[test]]
+name = "metadata_test"
+path = "tests/public/metadata_test.rs"
+
+[[test]]
+name = "png_device_test"
+path = "tests/public/png_device_test.rs"
+
+[[test]]
+name = "jpeg_device_test"
+path = "tests/public/jpeg_device_test.rs"
+
+[[test]]
+name = "bmp_device_test"
+path = "tests/public/bmp_device_test.rs"
+
+[[test]]
+name = "tiff_device_test"
+path = "tests/public/tiff_device_test.rs"
+
+[[test]]
+name = "text_absorber_test"
+path = "tests/public/text_absorber_test.rs"
+
+[[test]]
+name = "text_search_options_test"
+path = "tests/public/text_search_options_test.rs"
+
+[[test]]
+name = "text_edit_options_test"
+path = "tests/public/text_edit_options_test.rs"
+
+[[test]]
+name = "text_replace_options_test"
+path = "tests/public/text_replace_options_test.rs"
+
+[[test]]
+name = "image_enums_test"
+path = "tests/public/image_enums_test.rs"
+
+[[test]]
+name = "text_device_test"
+path = "tests/public/text_device_test.rs"
+
+[[test]]
+name = "margins_test"
+path = "tests/public/margins_test.rs"
+
+[[test]]
+name = "page_size_test"
+path = "tests/public/page_size_test.rs"
+
+[[test]]
+name = "rendering_options_test"
+path = "tests/public/rendering_options_test.rs"
+
+[[test]]
+name = "bitmap_info_test"
+path = "tests/public/bitmap_info_test.rs"
+
+[[test]]
+name = "tiff_settings_test"
+path = "tests/public/tiff_settings_test.rs"
+
+[[test]]
+name = "i_index_bitmap_converter_test"
+path = "tests/public/i_index_bitmap_converter_test.rs"
+
+[[test]]
+name = "form_presentation_mode_test"
+path = "tests/public/form_presentation_mode_test.rs"
+
+[[test]]
+name = "color_test"
+path = "tests/public/color_test.rs"
+
+[[test]]
+name = "point_test"
+path = "tests/public/point_test.rs"
+
+[[test]]
+name = "rectangle_test"
+path = "tests/public/rectangle_test.rs"
+
+[[test]]
+name = "value_enums_test"
+path = "tests/public/value_enums_test.rs"
+
+[[test]]
+name = "document_privilege_test"
+path = "tests/public/document_privilege_test.rs"
+
+[[test]]
+name = "embedded_files_test"
+path = "tests/public/embedded_files_test.rs"
+
+[[test]]
+name = "x_image_test"
+path = "tests/public/x_image_test.rs"
+
+[[test]]
+name = "image_extract_test"
+path = "tests/public/image_extract_test.rs"
+
+[[test]]
+name = "image_placement_test"
+path = "tests/public/image_placement_test.rs"
+
+[[test]]
+name = "font_embed_test"
+path = "tests/public/font_embed_test.rs"
+
+[[test]]
+name = "font_subset_test"
+path = "tests/public/font_subset_test.rs"
+
+[[test]]
+name = "drawing_test"
+path = "tests/public/drawing_test.rs"
+
+[[test]]
+name = "explicit_destination_test"
+path = "tests/public/explicit_destination_test.rs"
+
+[[test]]
+name = "page_annotations_test"
+path = "tests/public/page_annotations_test.rs"
+
+[[test]]
+name = "redaction_apply_test"
+path = "tests/public/redaction_apply_test.rs"
+
+[[test]]
+name = "named_destination_test"
+path = "tests/public/named_destination_test.rs"
+
+[[test]]
+name = "page_label_test"
+path = "tests/public/page_label_test.rs"
+
+[[test]]
+name = "actions_test"
+path = "tests/public/actions_test.rs"
+
+[[test]]
+name = "outline_tree_test"
+path = "tests/public/outlines_test.rs"
+
+[[test]]
+name = "annotation_enums_test"
+path = "tests/public/annotation_enums_test.rs"
+
+[[test]]
+name = "annotation_value_types_test"
+path = "tests/public/annotation_value_types_test.rs"
+
+[[test]]
+name = "annotations_text_link_test"
+path = "tests/public/annotations_text_link_test.rs"
+
+[[test]]
+name = "annotations_figure_test"
+path = "tests/public/annotations_figure_test.rs"
+
+[[test]]
+name = "annotations_text_markup_test"
+path = "tests/public/annotations_text_markup_test.rs"
+
+[[test]]
+name = "annotations_ink_stamp_test"
+path = "tests/public/annotations_ink_stamp_test.rs"
+
+[[test]]
+name = "annotations_media_test"
+path = "tests/public/annotations_media_test.rs"
+
+[[test]]
+name = "annotations_printer_marks_test"
+path = "tests/public/annotations_printer_marks_test.rs"
+
+[[test]]
+name = "form_enums_test"
+path = "tests/public/form_enums_test.rs"
+
+[[test]]
+name = "widget_annotation_test"
+path = "tests/public/widget_annotation_test.rs"
+
+[[test]]
+name = "form_fields_test"
+path = "tests/public/form_fields_test.rs"
+
+[[test]]
+name = "choice_fields_test"
+path = "tests/public/choice_fields_test.rs"
+
+[[test]]
+name = "text_box_subfields_test"
+path = "tests/public/text_box_subfields_test.rs"
+
+[[test]]
+name = "signatures_test"
+path = "tests/public/signatures_test.rs"
+
+[[test]]
+name = "form_value_types_test"
+path = "tests/public/form_value_types_test.rs"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+
+[[test]]
+name = "fonts_test"
+path = "tests/public/fonts_test.rs"
+
+[[test]]
+name = "svg_import_test"
+path = "tests/public/svg_import_test.rs"
+
+[[test]]
+name = "facades_file_test"
+path = "tests/public/facades_file_test.rs"
+
+[[test]]
+name = "facades_security_test"
+path = "tests/public/facades_security_test.rs"
+
+[[test]]
+name = "facades_content_test"
+path = "tests/public/facades_content_test.rs"
+
+[[test]]
+name = "facades_nav_test"
+path = "tests/public/facades_nav_test.rs"
+
+[[test]]
+name = "tables_test"
+path = "tests/public/tables_test.rs"
+
+[[test]]
+name = "base_paragraph_test"
+path = "tests/public/base_paragraph_test.rs"
+
+[[test]]
+name = "text_extras_test"
+path = "tests/public/text_extras_test.rs"
+
+[[test]]
+name = "border_info_test"
+path = "tests/public/border_info_test.rs"
+
+[[test]]
+name = "annotation_selector_test"
+path = "tests/public/annotation_selector_test.rs"
+
+[[test]]
+name = "forms_extra_test"
+path = "tests/public/forms_extra_test.rs"
+
+[[test]]
+name = "x_image_replace_test"
+path = "tests/public/x_image_replace_test.rs"
+
+[[test]]
+name = "watermark_artifact_test"
+path = "tests/public/watermark_artifact_test.rs"
+
+[[test]]
+name = "page_add_image_test"
+path = "tests/public/page_add_image_test.rs"
+
+[[test]]
+name = "matrix_test"
+path = "tests/public/matrix_test.rs"
+
+[[test]]
+name = "annotation_change_after_resize_test"
+path = "tests/public/annotation_change_after_resize_test.rs"
+
+[[test]]
+name = "annotation_measure_test"
+path = "tests/public/annotation_measure_test.rs"
+
+[[test]]
+name = "measure_number_format_test"
+path = "tests/public/measure_number_format_test.rs"
+
+[[test]]
+name = "date_time_test"
+path = "tests/public/date_time_test.rs"

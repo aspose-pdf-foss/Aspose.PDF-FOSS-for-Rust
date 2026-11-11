@@ -1,0 +1,81 @@
+# GitHub Actions CI.
+#
+# Five gates: build, clippy, doc, test and msrv.
+#
+# `--offline` throughout: the crate has no dependencies — both dependency
+# tables in Cargo.toml are empty — so the registry is never reached, which
+# also makes the build immune to a crates.io outage.
+#
+# Note on the lint jobs: each GitHub job gets its own runner and its own
+# checkout, so three of them in one stage cannot contend for cargo's
+# build-directory lock the way they can on a single shell executor.
+
+name: CI
+
+on:
+  push:
+  pull_request:
+
+# A second push to the same branch supersedes the first — there is
+# nothing to learn from a run against a commit that is already stale.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustc --version && cargo --version
+      # --all-targets covers the lib, every [[test]] entry and every
+      # examples/<name>.rs — the same scope cargo test compiles.
+      - run: cargo check --offline --all-targets
+
+  clippy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustc --version && cargo --version
+      # `rust-toolchain.toml` pins `profile = "minimal"`, which does not
+      # carry clippy, so the component is added explicitly. Idempotent
+      # when it is already there. This is the one step that may touch
+      # the network, and it reaches rustup's server rather than the
+      # cargo registry, so the --offline property of the build itself is
+      # unaffected.
+      - run: rustup component add clippy
+      # `-D warnings` makes any lint a failure: the codebase is at zero
+      # findings and this job is what keeps it there.
+      - run: cargo clippy --offline --all-targets -- -D warnings
+
+  doc:
+    runs-on: ubuntu-latest
+    env:
+      # Intra-doc links rot silently — a renamed or newly-private item
+      # leaves a link resolving to nothing while cargo doc still exits 0.
+      # This turns that into a failure.
+      RUSTDOCFLAGS: "-D warnings"
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustc --version && cargo --version
+      - run: cargo doc --offline --no-deps
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustc --version && cargo --version
+      - run: cargo test --offline --no-fail-fast
+
+  msrv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Proves the floor `rust-version` in Cargo.toml promises. Everything
+      # else runs on stable per rust-toolchain.toml, so nothing but this
+      # job would notice a newly-stabilised feature raising the real floor
+      # above the declared one. Bumping `rust-version` means bumping the
+      # toolchain here in lockstep.
+      - run: rustup toolchain install 1.86 --profile minimal
+      - run: cargo +1.86 check --offline --all-targets
+      - run: cargo +1.86 test --offline --no-fail-fast

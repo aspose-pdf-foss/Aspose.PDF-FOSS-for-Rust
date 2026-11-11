@@ -1,0 +1,32 @@
+# Per-project toolchain pin.
+#
+# rustup honours this file from the workspace root and switches
+# to the listed channel on every `cargo` / `rustc` invocation,
+# auto-installing the toolchain on first use if not present.
+# This makes the lib build deterministic across:
+#
+#   * dev machines that ship a newer default toolchain
+#     (a fresh `rustup default stable` would pick e.g. 1.84,
+#     potentially smuggling in new language features the MSRV
+#     pin in Cargo.toml — `rust-version = "1.86"` — would not
+#     catch);
+#
+#   * the GitLab Runner under LocalSystem on Windows, whose
+#     `%USERPROFILE%` is C:\Windows\System32\config\systemprofile
+#     and has no per-user `~/.rustup/settings.toml`. Without
+#     this file rustup throws "could not choose a version of
+#     rustc to run" because no user-level default is configured.
+#
+# Bumping the MSRV is a two-line change: update `channel` here
+# and `rust-version` in Cargo.toml in the same commit.
+
+[toolchain]
+# `stable` rather than a pinned MSRV, so day-to-day work runs on
+# a current toolchain and MSRV compliance is proved separately by
+# the CI matrix rather than by pinning every checkout to the
+# floor. `rust-version = "1.86"` in Cargo.toml is what documents
+# the floor; this file only governs which channel rustup picks
+# when no per-user default is set (which is the case for the
+# GitLab Runner running as LocalSystem on Windows).
+channel = "stable"
+profile = "minimal"
