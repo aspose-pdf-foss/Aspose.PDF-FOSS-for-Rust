@@ -2,17 +2,17 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `FileIcon` — see the canonical Aspose.PDF documentation.
+/// The icon a file attachment annotation is shown with.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum FileIcon {
-    /// `PushPin`.
+    /// A drawing-pin icon.
     #[default]
     PushPin = 0,
-    /// `Graph`.
+    /// A graph icon.
     Graph = 1,
-    /// `Paperclip`.
+    /// A paperclip icon.
     Paperclip = 2,
-    /// `Tag`.
+    /// A luggage-tag icon.
     Tag = 3,
 }

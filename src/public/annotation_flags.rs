@@ -2,31 +2,31 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `AnnotationFlags` — see the canonical Aspose.PDF documentation.
+/// Display and interaction flags carried by an annotation.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum AnnotationFlags {
-    /// `Default`.
+    /// No flags set.
     #[default]
     Default = 0,
-    /// `Invisible`.
+    /// Hide an annotation whose type the viewer cannot handle, rather than drawing a fallback.
     Invisible = 1,
-    /// `Hidden`.
+    /// Neither display nor print the annotation.
     Hidden = 2,
-    /// `Print`.
+    /// Print the annotation; without this flag it is shown on screen only.
     Print = 4,
-    /// `NoZoom`.
+    /// Keep the annotation at a fixed size as the page is zoomed.
     NoZoom = 8,
-    /// `NoRotate`.
+    /// Keep the annotation upright as the page is rotated.
     NoRotate = 16,
-    /// `NoView`.
+    /// Print the annotation but do not show it on screen.
     NoView = 32,
-    /// `ReadOnly`.
+    /// Display the annotation but ignore interaction with it.
     ReadOnly = 64,
-    /// `Locked`.
+    /// Forbid deleting the annotation or changing its properties.
     Locked = 128,
-    /// `ToggleNoView`.
+    /// Invert the `NoView` behaviour while the annotation is selected or hovered.
     ToggleNoView = 256,
-    /// `LockedContents`.
+    /// Forbid changing the annotation's contents, its other properties staying editable.
     LockedContents = 512,
 }

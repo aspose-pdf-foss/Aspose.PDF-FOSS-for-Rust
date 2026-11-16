@@ -2,23 +2,23 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `IconCaptionPosition` — see the canonical Aspose.PDF documentation.
+/// How a push button's icon and caption are arranged relative to each other.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum IconCaptionPosition {
-    /// `NoIcon`.
+    /// Caption only; no icon is drawn.
     #[default]
     NoIcon = 0,
-    /// `NoCaption`.
+    /// Icon only; no caption is drawn.
     NoCaption = 1,
-    /// `CaptionBelowIcon`.
+    /// Caption below the icon.
     CaptionBelowIcon = 2,
-    /// `CaptionAboveIcon`.
+    /// Caption above the icon.
     CaptionAboveIcon = 3,
-    /// `CaptionToTheRight`.
+    /// Caption to the right of the icon.
     CaptionToTheRight = 4,
-    /// `CaptionToTheLeft`.
+    /// Caption to the left of the icon.
     CaptionToTheLeft = 5,
-    /// `CaptionOverlaid`.
+    /// Caption drawn over the icon.
     CaptionOverlaid = 6,
 }

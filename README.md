@@ -358,11 +358,11 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `AlignmentType` | struct | A named horizontal-alignment constant. |
 | `Annotation` | trait | A PDF annotation. |
 | `AnnotationCollection` | struct | A page's collection of annotations (0-based indexing). |
-| `AnnotationFlags` | enum | `AnnotationFlags` — see the canonical Aspose.PDF documentation. |
+| `AnnotationFlags` | enum | Display and interaction flags carried by an annotation. |
 | `AnnotationSelector` | struct | A visitor that records the annotations it visits. |
-| `AnnotationState` | enum | `AnnotationState` — see the canonical Aspose.PDF documentation. |
-| `AnnotationStateModel` | enum | `AnnotationStateModel` — see the canonical Aspose.PDF documentation. |
-| `AnnotationType` | enum | `AnnotationType` — see the canonical Aspose.PDF documentation. |
+| `AnnotationState` | enum | The review state a markup annotation has been marked with. |
+| `AnnotationStateModel` | enum | Which family of review states an annotation's state belongs to. |
+| `AnnotationType` | enum | The annotation subtype, one variant per kind this crate models. |
 | `Artifact` | struct | A page artifact. |
 | `ArtifactCollection` | struct | An ordered, 1-based collection of `Artifact`s. |
 | `ArtifactSubtype` | enum | The subtype of a page `Artifact`. |
@@ -378,16 +378,16 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `Bookmark` | struct | A bookmark (outline entry) descriptor. |
 | `Bookmarks` | struct | An ordered, 0-indexed list of `Bookmark`s. |
 | `Border` | struct | An annotation border (the `/BS` / `/Border` entry). |
-| `BorderEffect` | enum | `BorderEffect` — see the canonical Aspose.PDF documentation. |
+| `BorderEffect` | enum | Whether an annotation's border is drawn plain or with a cloudy effect. |
 | `BorderInfo` | struct | A four-edge border. |
 | `BorderSide` | struct | A set of border edges (bit flags). |
-| `BorderStyle` | enum | `BorderStyle` — see the canonical Aspose.PDF documentation. |
-| `BoxStyle` | enum | `BoxStyle` — see the canonical Aspose.PDF documentation. |
+| `BorderStyle` | enum | How an annotation's or form field's border line is drawn. |
+| `BoxStyle` | enum | The mark drawn inside a checked check box or a selected radio button. |
 | `ButtonField` | struct | A push-button form field. |
-| `CapStyle` | enum | `CapStyle` — see the canonical Aspose.PDF documentation. |
-| `CaptionPosition` | enum | `CaptionPosition` — see the canonical Aspose.PDF documentation. |
+| `CapStyle` | enum | The shape given to the ends of an ink annotation's strokes. |
+| `CaptionPosition` | enum | Where a line annotation's caption sits relative to the line. |
 | `CaretAnnotation` | struct | A caret annotation marking a text-insertion point. |
-| `CaretSymbol` | enum | `CaretSymbol` — see the canonical Aspose.PDF documentation. |
+| `CaretSymbol` | enum | The symbol a caret annotation draws, if any. |
 | `Cell` | struct | A table cell. |
 | `Cells` | struct | An ordered, 0-indexed collection of `Cell`s. |
 | `Characteristics` | struct | Appearance characteristics (the annotation `/MK` dictionary). |
@@ -401,7 +401,7 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `ColorDepth` | enum | Pixel-depth selector for TIFF output. |
 | `ColorSpace` | enum | A device colour space. |
 | `ColorType` | enum | The colour classification of an image. |
-| `ColorsOfCMYK` | enum | `ColorsOfCMYK` — see the canonical Aspose.PDF documentation. |
+| `ColorsOfCMYK` | enum | Which process colour a colour-bar printer mark stands for. |
 | `ComboBoxField` | struct | A combo-box (drop-down) choice field. |
 | `CommonFigureAnnotation` | trait | A figure annotation (square / circle) with an interior fill and a padding frame. |
 | `CompositingParameters` | struct | The compositing state applied when an image is drawn. |
@@ -422,7 +422,7 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `Device` | trait | Marker trait for any Aspose.Pdf.Devices concrete device. |
 | `DigestHashAlgorithm` | enum | The message-digest hash algorithm used to sign a document. |
 | `Direction` | enum | The predominant reading order for text (the document catalog's `/ViewerPreferences /Direction`). |
-| `DocMDPAccessPermissions` | enum | `DocMDPAccessPermissions` — see the canonical Aspose.PDF documentation. |
+| `DocMDPAccessPermissions` | enum | What a reader may still change in a document certified by a DocMDP signature. |
 | `DocMDPSignature` | struct | A DocMDP signature restricting post-signing modifications. |
 | `Document` | struct | PDF document parsed from a file path or an in-memory byte buffer. |
 | `DocumentDevice` | trait | Document-rendering device — abstract intermediate base for any device that processes an entire `Document` (or a page range) into a single output sink. |
@@ -444,7 +444,7 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `FieldType` | enum | A form-field kind. |
 | `FileAttachmentAnnotation` | struct | A file-attachment annotation referencing an embedded file. |
 | `FileEncoding` | enum | Encoding applied to an embedded file's payload. |
-| `FileIcon` | enum | `FileIcon` — see the canonical Aspose.PDF documentation. |
+| `FileIcon` | enum | The icon a file attachment annotation is shown with. |
 | `FileParams` | struct | The `/Params` metadata of an embedded file. |
 | `FileSelectBoxField` | struct | A file-select text-box form field. |
 | `FileSpecification` | struct | A file specification describing an embedded / associated file. |
@@ -467,23 +467,23 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `FormEditor` | struct | A facade for adding / removing / configuring form fields. |
 | `FormFieldFacade` | struct | Form-field appearance attributes. |
 | `FormPresentationMode` | enum | Selects how AcroForm widgets are presented during rendering. |
-| `FormType` | enum | `FormType` — see the canonical Aspose.PDF documentation. |
+| `FormType` | enum | Which form technology a document's form uses. |
 | `FractionStyle` | enum | How fractional measurement values are displayed. |
 | `FreeTextAnnotation` | struct | A free-text annotation rendered with a default appearance. |
-| `FreeTextIntent` | enum | `FreeTextIntent` — see the canonical Aspose.PDF documentation. |
+| `FreeTextIntent` | enum | What a free text annotation is being used as. |
 | `GoToAction` | struct | A `/GoTo` action targeting an in-document destination. |
 | `GoToURIAction` | struct | A `/URI` action that navigates to an external address. |
 | `Graph` | struct | A drawing canvas owning a list of shapes. |
 | `GraphInfo` | struct | Stroke / fill styling. |
 | `HighlightAnnotation` | struct | A highlight text-markup annotation. |
-| `HighlightingMode` | enum | `HighlightingMode` — see the canonical Aspose.PDF documentation. |
+| `HighlightingMode` | enum | The visual effect shown while a link or widget annotation is being activated. |
 | `HorizontalAlignment` | enum | Horizontal alignment of content within its container. |
 | `Hyperlink` | trait | Marker trait for a hyperlink target. |
 | `IAppointment` | trait | Marker trait for a navigation target or action. |
 | `IFacade` | trait | The base facade surface: bind a PDF and release it. |
 | `IIndexBitmapConverter` | trait | Pluggable palette-quantisation strategy for indexed-colour TIFF output. |
 | `ISaveableFacade` | trait | A facade whose bound document can be saved. |
-| `IconCaptionPosition` | enum | `IconCaptionPosition` — see the canonical Aspose.PDF documentation. |
+| `IconCaptionPosition` | enum | How a push button's icon and caption are arranged relative to each other. |
 | `IconFit` | struct | Controls how a button icon is scaled to fit its field rectangle. |
 | `Id` | struct | The document's `/ID` file identifier pair. |
 | `ImageDeleteAction` | enum | How a deleted image's page contents are treated. |
@@ -496,13 +496,13 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `InkAnnotation` | struct | A freehand-ink annotation (a list of point strokes). |
 | `JavascriptAction` | struct | A `/JavaScript` action carrying a script to run. |
 | `JpegDevice` | struct | Concrete `ImageDevice` emitting JPEG bytes. |
-| `Justification` | enum | `Justification` — see the canonical Aspose.PDF documentation. |
+| `Justification` | enum | Horizontal alignment of a free text annotation's or rich text field's content. |
 | `KeySize` | enum | An encryption key length. |
 | `LanguageTransformation` | enum | How language-specific glyph forms are transformed while editing. |
 | `Line` | struct | A poly-line: a flat `[x0, y0, x1, y1, …]` point array. |
 | `LineAnnotation` | struct | A line annotation between two endpoints. |
-| `LineEnding` | enum | `LineEnding` — see the canonical Aspose.PDF documentation. |
-| `LineIntent` | enum | `LineIntent` — see the canonical Aspose.PDF documentation. |
+| `LineEnding` | enum | The shape drawn at an end of a line, polyline or callout. |
+| `LineIntent` | enum | What a line annotation is being used as. |
 | `LinkAnnotation` | struct | A link annotation (a clickable region with an action or destination). |
 | `ListBoxField` | struct | A list-box choice field. |
 | `LoadOptions` | trait | Common options for importing a non-PDF format. |
@@ -563,7 +563,7 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `PngDevice` | struct | Concrete `ImageDevice` emitting PNG bytes. |
 | `Point` | struct | A point in PDF user space, carrying `x` / `y` coordinates in double precision. |
 | `PolyAnnotation` | trait | A polygon or polyline annotation defined by its vertices. |
-| `PolyIntent` | enum | `PolyIntent` — see the canonical Aspose.PDF documentation. |
+| `PolyIntent` | enum | What a polygon or polyline annotation is being used as. |
 | `PolygonAnnotation` | struct | A polygon annotation defined by its vertices. |
 | `PolylineAnnotation` | struct | A polyline annotation defined by its vertices. |
 | `PopupAnnotation` | struct | A pop-up note window. |
@@ -573,9 +573,9 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `PrintDuplex` | enum | The duplex printing mode (the catalog's `/ViewerPreferences /Duplex`). |
 | `PrintScaling` | enum | The print-scaling mode (the catalog's `/ViewerPreferences /PrintScaling`). |
 | `PrinterMarkAnnotation` | trait | A printer-mark annotation (color bar, trim / bleed / registration mark, page information). |
-| `PrinterMarkCornerPosition` | enum | `PrinterMarkCornerPosition` — see the canonical Aspose.PDF documentation. |
-| `PrinterMarkSidePosition` | enum | `PrinterMarkSidePosition` — see the canonical Aspose.PDF documentation. |
-| `PrinterMarksKind` | enum | `PrinterMarksKind` — see the canonical Aspose.PDF documentation. |
+| `PrinterMarkCornerPosition` | enum | Which corner of the page a corner printer mark is placed at. |
+| `PrinterMarkSidePosition` | enum | Which edge of the page a registration mark is placed on. |
+| `PrinterMarksKind` | enum | Which families of printer marks are meant. |
 | `PropertyFlag` | enum | A form-field property flag. |
 | `RadioButtonField` | struct | A radio-button group field. |
 | `RadioButtonOptionField` | struct | One selectable option within a radio-button group. |
@@ -584,51 +584,51 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `RegistrationMarkAnnotation` | struct | A registration printer mark anchored to a page side. |
 | `RenderingOptions` | struct | Bag of rendering policy consulted by image-device pipelines. |
 | `ReplaceAdjustment` | enum | How the surrounding layout is adjusted after a text replacement. |
-| `ReplyType` | enum | `ReplyType` — see the canonical Aspose.PDF documentation. |
+| `ReplyType` | enum | Whether a markup annotation replies to another or is grouped with it. |
 | `Resolution` | struct | Output resolution in dots-per-inch. |
 | `Resources` | struct | A page's resources. |
 | `RichMediaAnnotation` | struct | A rich-media (audio / video) annotation. |
 | `RichTextBoxField` | struct | A rich-text text-box form field. |
-| `RichTextFontStyles` | enum | `RichTextFontStyles` — see the canonical Aspose.PDF documentation. |
+| `RichTextFontStyles` | enum | Font styles applied to a range of a free text annotation's rich text. |
 | `Rotation` | enum | Page rotation in 90° increments. |
 | `Row` | struct | A table row. |
 | `Rows` | struct | An ordered, 0-indexed collection of `Row`s. |
 | `SaveableFacade` | struct | The concrete saveable-facade base. |
-| `ScalingMode` | enum | `ScalingMode` — see the canonical Aspose.PDF documentation. |
-| `ScalingReason` | enum | `ScalingReason` — see the canonical Aspose.PDF documentation. |
+| `ScalingMode` | enum | Whether a button icon keeps its proportions when scaled to its field. |
+| `ScalingReason` | enum | When a button icon is scaled to fit its field. |
 | `Scope` | enum | How many matches a text replacement affects. |
 | `ScreenAnnotation` | struct | A screen annotation that plays a media rendition. |
 | `Shape` | trait | A drawable shape with stroke / fill styling. |
 | `ShapeType` | enum | Page-orientation hint for the rendering pipeline. |
-| `SignDependentElementsRenderingModes` | enum | `SignDependentElementsRenderingModes` — see the canonical Aspose.PDF documentation. |
+| `SignDependentElementsRenderingModes` | enum | Whether a form's signature-dependent elements are rendered as signed or unsigned. |
 | `Signature` | struct | A digital signature's metadata and appearance. |
 | `SignatureCustomAppearance` | struct | The visual appearance options for a digital signature. |
 | `SignatureField` | struct | A signature form field. |
 | `SignatureName` | struct | The name of a signature field. |
 | `SoundAnnotation` | struct | A sound annotation that plays an audio clip. |
 | `SoundData` | struct | The audio parameters of a sound annotation. |
-| `SoundEncoding` | enum | `SoundEncoding` — see the canonical Aspose.PDF documentation. |
-| `SoundIcon` | enum | `SoundIcon` — see the canonical Aspose.PDF documentation. |
+| `SoundEncoding` | enum | How a sound annotation's samples are encoded. |
+| `SoundIcon` | enum | The icon a sound annotation is shown with. |
 | `SoundSampleData` | struct | Audio-sample parameters for a sound annotation. |
-| `SoundSampleDataEncodingFormat` | enum | `SoundSampleDataEncodingFormat` — see the canonical Aspose.PDF documentation. |
+| `SoundSampleDataEncodingFormat` | enum | How a sound's sample data is encoded. |
 | `SquareAnnotation` | struct | A square figure annotation. |
 | `SquigglyAnnotation` | struct | A squiggly text-markup annotation. |
 | `StampAnnotation` | struct | A rubber-stamp annotation. |
-| `StampIcon` | enum | `StampIcon` — see the canonical Aspose.PDF documentation. |
+| `StampIcon` | enum | The named stamp a stamp annotation displays. |
 | `StampType` | enum | A stamp content kind. |
 | `StrikeOutAnnotation` | struct | A strike-out text-markup annotation. |
-| `SubjectNameElements` | enum | `SubjectNameElements` — see the canonical Aspose.PDF documentation. |
+| `SubjectNameElements` | enum | A component of a signing certificate's subject name. |
 | `SubmitFormAction` | struct | A `/SubmitForm` action submitting form fields to a URL. |
 | `SubmitFormFlag` | enum | A submit-form export format. |
 | `SvgLoadOptions` | struct | Options controlling SVG import. |
-| `Symbology` | enum | `Symbology` — see the canonical Aspose.PDF documentation. |
+| `Symbology` | enum | The barcode symbology a barcode field encodes its value in. |
 | `TabAlignmentType` | enum | How text is aligned relative to a tab stop position. |
 | `TabLeaderType` | enum | The leader style drawn across a tab stop's gap. |
 | `TabStop` | struct | A single tab stop. |
 | `TabStops` | struct | An ordered collection of `TabStop`s. |
 | `Table` | struct | A table: rows of cells with shared column / border / cell styling. |
 | `TextAbsorber` | struct | Visitor that walks a `Document` or single `Page` and accumulates the extracted text. |
-| `TextAlignment` | enum | `TextAlignment` — see the canonical Aspose.PDF documentation. |
+| `TextAlignment` | enum | Horizontal alignment carried by an annotation or its text style. |
 | `TextAnnotation` | struct | A text ("sticky note") annotation. |
 | `TextBoxField` | struct | A text-entry form field. |
 | `TextBuilder` | struct | Appends text to a page's content stream. |
@@ -638,7 +638,7 @@ devices share — so a device is chosen by the trait it implements, not by a for
 | `TextFragmentAbsorber` | struct | Phrase-search visitor producing located `TextFragment`s. |
 | `TextFragmentCollection` | struct | A collection of `TextFragment`s. |
 | `TextFragmentState` | struct | The text state of a single `TextFragment`. |
-| `TextIcon` | enum | `TextIcon` — see the canonical Aspose.PDF documentation. |
+| `TextIcon` | enum | The icon a text annotation is shown with. |
 | `TextMarkupAnnotation` | trait | A text-markup annotation (highlight / underline / strike-out / squiggly) defined by its quadrilateral regions. |
 | `TextParagraph` | struct | A multi-line, aligned text block. |
 | `TextReplaceOptions` | struct | Options controlling how a text replacement is applied. |
@@ -756,11 +756,15 @@ when the crate was cut, not how much of the canonical surface it covers.
 **Surface that is present but not wired.** Part of the public API ships without being connected
 to the engine: those methods are marked in their rustdoc and **panic** when called, naming the
 capability that would unblock them. They never report a quiet success. There are 57 such
-methods, and they are not a to-do list — each is in one of four positions:
+methods, each in one of these five positions:
 
-- **No sibling FOSS track ships it.** Peer parity is this project's working ceiling, so these are
-  not ours to add: XFDF / FDF annotation import-export, bookmark XML / HTML serialisation,
-  content-stream text replacement, and signature removal with the revision rewrite it needs.
+- **Not built yet.** A sibling FOSS track ships it, so the parity ceiling allows it: this is work
+  the crate intends to do rather than a boundary it has drawn. XFDF / FDF annotation
+  import-export, bookmark serialisation, content-stream text replacement, barcode rendering,
+  document-level additional actions, and a regular-expression text search — which today refuses
+  rather than answering a pattern with a literal match.
+- **No sibling FOSS track ships it.** Peer parity is this project's working ceiling, so this is
+  not ours to add: signature removal with the revision rewrite it needs.
 - **This crate's object model cannot express it.** Stamp manipulation by id — a stamp is drawn
   into the page's content stream, so there is no object left to find, hide or move; copying a form
   field, which needs a second field of the same concrete type where the model offers a trait
@@ -769,10 +773,8 @@ methods, and they are not a to-do list — each is in one of four positions:
 - **It needs an appearance generator.** This crate writes interactive objects and lets a viewer
   draw them, so anything that must *draw* first — regenerating an annotation's appearance stream,
   burning a field's value into the page — has nothing to draw with.
-- **It is a deliberate boundary.** A regular-expression text search refuses rather than answering
-  a pattern with a literal search, because no peer ships a search-options surface at all; barcode
-  rendering, document-level additional actions, a privilege check and a file specification's raw
-  contents are each a single member outside the shipped subset.
+- **It is a deliberate boundary.** A privilege check and a file specification's raw contents are
+  each a single member outside the shipped subset.
 
 Where a property is carried but not written, its rustdoc says so **and says what is missing** — a
 second object the writer has no place for, a stage the encoder does not have, an entry the format

@@ -2,13 +2,13 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `BorderEffect` — see the canonical Aspose.PDF documentation.
+/// Whether an annotation's border is drawn plain or with a cloudy effect.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum BorderEffect {
-    /// `None`.
+    /// A plain border.
     #[default]
     None = 0,
-    /// `Cloudy`.
+    /// A border drawn as a series of arcs, like a cloud.
     Cloudy = 1,
 }

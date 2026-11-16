@@ -28,6 +28,14 @@ names, signatures and semantics stay put, and the public surface only grows. Rai
 MSRV is called out in the entry for the release that raises it — it cannot be signalled
 in the number, the minor and patch being the date.
 
+## [Unreleased]
+
+Work towards the next monthly release. Entries accumulate here, and at tag time this
+heading takes that release's number and date while a fresh `[Unreleased]` opens above it.
+`Cargo.toml` keeps the released number until the first change that alters behaviour:
+a correction to documentation does not change what the crate does, so it ships under the
+number it was released with.
+
 ## [1.26.11] — 2026-11-11
 
 The first public release, so this entry describes the whole shipping surface rather
@@ -143,10 +151,9 @@ The crate mirrors canonical API *names and shapes*; method casing follows Rust i
 without being wired to the engine — those panic, naming the capability that would
 unblock them, and each says so in its rustdoc. They never report a quiet success.
 
-That set is not a to-do list. Every one of them is in one of four positions, and the
-README's scope note gives the detail: no sibling FOSS track ships it, so the parity
-ceiling puts it out of scope; this crate's object model cannot express it; it needs an
-appearance generator, which the library deliberately does not have; or it is a stated
-boundary. Where a property is carried but not written, its rustdoc says so and says what
+That set is not arbitrary. The README's scope note places every one of them, and says
+which are work the crate intends to do rather than a boundary it has drawn — that note
+is the single place those positions are kept, so this entry does not restate them.
+Where a property is carried but not written, its rustdoc says so and says what
 is missing — a second object the writer has no place for, a stage an encoder does not
 have, an entry the format supersedes — and a test holds each of those notes down.

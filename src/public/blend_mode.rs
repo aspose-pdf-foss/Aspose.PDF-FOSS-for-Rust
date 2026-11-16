@@ -11,35 +11,35 @@ pub enum BlendMode {
     /// `Normal` — the default; the source replaces the backdrop.
     #[default]
     Normal = 0,
-    /// `Multiply`.
+    /// Multiplies backdrop and source, so the result is never lighter than either.
     Multiply = 1,
-    /// `Screen`.
+    /// Multiplies the complements, so the result is never darker than either.
     Screen = 2,
-    /// `Overlay`.
+    /// Multiplies or screens according to the backdrop, keeping its highlights and shadows.
     Overlay = 3,
-    /// `Darken`.
+    /// Keeps whichever of backdrop and source is the darker.
     Darken = 4,
-    /// `Lighten`.
+    /// Keeps whichever of backdrop and source is the lighter.
     Lighten = 5,
-    /// `ColorDodge`.
+    /// Brightens the backdrop to reflect the source.
     ColorDodge = 6,
-    /// `ColorBurn`.
+    /// Darkens the backdrop to reflect the source.
     ColorBurn = 7,
-    /// `HardLight`.
+    /// Multiplies or screens according to the source, as under a harsh spotlight.
     HardLight = 8,
-    /// `SoftLight`.
+    /// Darkens or lightens according to the source, as under a diffuse spotlight.
     SoftLight = 9,
-    /// `Difference`.
+    /// Subtracts the darker of the two colours from the lighter.
     Difference = 10,
-    /// `Exclusion`.
+    /// Like `Difference`, but with lower contrast.
     Exclusion = 11,
-    /// `Hue`.
+    /// The hue of the source with the saturation and luminosity of the backdrop.
     Hue = 12,
-    /// `Saturation`.
+    /// The saturation of the source with the hue and luminosity of the backdrop.
     Saturation = 13,
-    /// `Color`.
+    /// The hue and saturation of the source with the luminosity of the backdrop.
     Color = 14,
-    /// `Luminosity`.
+    /// The luminosity of the source with the hue and saturation of the backdrop.
     Luminosity = 15,
     /// `Compatible` — the legacy alias for `Normal`.
     Compatible = 16,

@@ -2,15 +2,15 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `LineIntent` — see the canonical Aspose.PDF documentation.
+/// What a line annotation is being used as.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum LineIntent {
-    /// `Undefined`.
+    /// No intent; nothing is written.
     #[default]
     Undefined = 0,
-    /// `LineArrow`.
+    /// An arrow pointing at something.
     LineArrow = 1,
-    /// `LineDimension`.
+    /// A dimension line measuring a distance.
     LineDimension = 2,
 }

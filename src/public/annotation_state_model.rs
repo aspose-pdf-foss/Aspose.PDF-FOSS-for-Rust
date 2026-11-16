@@ -2,15 +2,15 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `AnnotationStateModel` — see the canonical Aspose.PDF documentation.
+/// Which family of review states an annotation's state belongs to.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum AnnotationStateModel {
-    /// `Undefined`.
+    /// No model; nothing is written.
     #[default]
     Undefined = 0,
-    /// `Marked`.
+    /// States that simply flag the annotation.
     Marked = 1,
-    /// `Review`.
+    /// States that record a review verdict.
     Review = 2,
 }

@@ -2,31 +2,31 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `TextIcon` — see the canonical Aspose.PDF documentation.
+/// The icon a text annotation is shown with.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum TextIcon {
-    /// `Note`.
+    /// A note-page icon.
     #[default]
     Note = 0,
-    /// `Comment`.
+    /// A comment balloon.
     Comment = 1,
-    /// `Key`.
+    /// A key icon.
     Key = 2,
-    /// `Help`.
+    /// A question-mark icon.
     Help = 3,
-    /// `NewParagraph`.
+    /// A mark for a new paragraph.
     NewParagraph = 4,
-    /// `Paragraph`.
+    /// A pilcrow.
     Paragraph = 5,
-    /// `Insert`.
+    /// An insertion caret.
     Insert = 6,
-    /// `Check`.
+    /// A tick.
     Check = 7,
-    /// `Cross`.
+    /// A cross.
     Cross = 8,
-    /// `Circle`.
+    /// A circle.
     Circle = 9,
-    /// `Star`.
+    /// A star.
     Star = 10,
 }

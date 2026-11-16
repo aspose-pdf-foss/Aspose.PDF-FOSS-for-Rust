@@ -2,17 +2,17 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `RichTextFontStyles` — see the canonical Aspose.PDF documentation.
+/// Font styles applied to a range of a free text annotation's rich text.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum RichTextFontStyles {
-    /// `ClearExisting`.
+    /// Drop the styling already on the range.
     #[default]
     ClearExisting = 1,
-    /// `Bold`.
+    /// Bold.
     Bold = 2,
-    /// `Italic`.
+    /// Italic.
     Italic = 4,
-    /// `Underline`.
+    /// Underlined.
     Underline = 8,
 }

@@ -2,18 +2,18 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `ColorsOfCMYK` — see the canonical Aspose.PDF documentation.
+/// Which process colour a colour-bar printer mark stands for.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 #[allow(clippy::upper_case_acronyms)]
 pub enum ColorsOfCMYK {
-    /// `Cyan`.
+    /// The cyan process plate.
     #[default]
     Cyan = 0,
-    /// `Magenta`.
+    /// The magenta process plate.
     Magenta = 1,
-    /// `Yellow`.
+    /// The yellow process plate.
     Yellow = 2,
-    /// `Black`.
+    /// The black process plate.
     Black = 3,
 }

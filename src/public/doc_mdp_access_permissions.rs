@@ -2,16 +2,16 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `DocMDPAccessPermissions` — see the canonical Aspose.PDF documentation.
+/// What a reader may still change in a document certified by a DocMDP signature.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 #[allow(clippy::upper_case_acronyms)]
 pub enum DocMDPAccessPermissions {
-    /// `NoChanges`.
+    /// No change is permitted; any modification breaks the certification.
     #[default]
     NoChanges = 1,
-    /// `FillingInForms`.
+    /// Filling in form fields and signing are permitted.
     FillingInForms = 2,
-    /// `AnnotationModification`.
+    /// Filling in form fields, signing and annotating are permitted.
     AnnotationModification = 3,
 }

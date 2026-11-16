@@ -2,13 +2,13 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `SignDependentElementsRenderingModes` — see the canonical Aspose.PDF documentation.
+/// Whether a form's signature-dependent elements are rendered as signed or unsigned.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum SignDependentElementsRenderingModes {
-    /// `RenderFormAsUnsigned`.
+    /// Draw the form as it appears before signing.
     #[default]
     RenderFormAsUnsigned = 0,
-    /// `RenderFormAsSigned`.
+    /// Draw the form as it appears once signed.
     RenderFormAsSigned = 1,
 }

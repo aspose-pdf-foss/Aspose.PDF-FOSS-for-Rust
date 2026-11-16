@@ -2,23 +2,23 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `PrinterMarksKind` — see the canonical Aspose.PDF documentation.
+/// Which families of printer marks are meant.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum PrinterMarksKind {
-    /// `None`.
+    /// No printer marks.
     #[default]
     None = 0,
-    /// `TrimMarks`.
+    /// Marks showing where the page is trimmed.
     TrimMarks = 1,
-    /// `BleedMarks`.
+    /// Marks showing the bleed boundary.
     BleedMarks = 2,
-    /// `RegistrationMarks`.
+    /// Marks used to align the printing plates.
     RegistrationMarks = 4,
-    /// `ColorBars`.
+    /// Patches of the process colours, for press calibration.
     ColorBars = 8,
-    /// `PageInformation`.
+    /// Page identification text.
     PageInformation = 16,
-    /// `All`.
+    /// Every kind of printer mark.
     All = 31,
 }

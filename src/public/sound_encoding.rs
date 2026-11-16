@@ -4,7 +4,7 @@
 //! The sample-encoding scheme of a [`SoundData`](crate::SoundData) stream.
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `SoundEncoding` — see the canonical Aspose.PDF documentation.
+/// How a sound annotation's samples are encoded.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum SoundEncoding {

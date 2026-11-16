@@ -2,22 +2,22 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `BoxStyle` — see the canonical Aspose.PDF documentation.
+/// The mark drawn inside a checked check box or a selected radio button.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum BoxStyle {
-    /// `Circle`.
+    /// A filled circle.
     #[default]
     Circle = 0,
-    /// `Check`.
+    /// A tick.
     Check = 1,
-    /// `Cross`.
+    /// A cross.
     Cross = 2,
-    /// `Diamond`.
+    /// A filled diamond.
     Diamond = 3,
-    /// `Square`.
+    /// A filled square.
     Square = 4,
-    /// `Star`.
+    /// A five-pointed star.
     Star = 5,
 }
 

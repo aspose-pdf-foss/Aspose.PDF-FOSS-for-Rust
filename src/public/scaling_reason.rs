@@ -2,17 +2,17 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `ScalingReason` — see the canonical Aspose.PDF documentation.
+/// When a button icon is scaled to fit its field.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum ScalingReason {
-    /// `Always`.
+    /// Always scale the icon. Written as `A`.
     #[default]
     Always = 0,
-    /// `IconIsBigger`.
+    /// Scale only when the icon is larger than the field. Written as `B`.
     IconIsBigger = 1,
-    /// `IconIsSmaller`.
+    /// Scale only when the icon is smaller than the field. Written as `S`.
     IconIsSmaller = 2,
-    /// `Never`.
+    /// Never scale the icon. Written as `N`.
     Never = 3,
 }

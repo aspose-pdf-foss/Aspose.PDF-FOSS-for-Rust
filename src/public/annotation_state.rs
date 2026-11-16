@@ -2,25 +2,25 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `AnnotationState` — see the canonical Aspose.PDF documentation.
+/// The review state a markup annotation has been marked with.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum AnnotationState {
-    /// `Undefined`.
+    /// No state; nothing is written.
     #[default]
     Undefined = 0,
-    /// `Marked`.
+    /// Flagged by the reviewer.
     Marked = 1,
-    /// `Unmarked`.
+    /// Explicitly not flagged.
     Unmarked = 2,
-    /// `Accepted`.
+    /// The change was accepted.
     Accepted = 3,
-    /// `Rejected`.
+    /// The change was rejected.
     Rejected = 4,
-    /// `Cancelled`.
+    /// The review was cancelled.
     Cancelled = 5,
-    /// `Completed`.
+    /// The review is finished.
     Completed = 6,
-    /// `None`.
+    /// Reviewed with no verdict recorded.
     None = 7,
 }

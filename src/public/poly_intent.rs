@@ -2,17 +2,17 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `PolyIntent` — see the canonical Aspose.PDF documentation.
+/// What a polygon or polyline annotation is being used as.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum PolyIntent {
-    /// `Undefined`.
+    /// No intent; nothing is written.
     #[default]
     Undefined = 0,
-    /// `PolygonCloud`.
+    /// A cloud-shaped outline.
     PolygonCloud = 1,
-    /// `PolyLineDimension`.
+    /// An open dimension line measuring a distance.
     PolyLineDimension = 2,
-    /// `PolygonDimension`.
+    /// A closed dimension outline measuring an area.
     PolygonDimension = 3,
 }

@@ -2,13 +2,13 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `CapStyle` — see the canonical Aspose.PDF documentation.
+/// The shape given to the ends of an ink annotation's strokes.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum CapStyle {
-    /// `Rectangular`.
+    /// Strokes end square.
     #[default]
     Rectangular = 1,
-    /// `Rounded`.
+    /// Strokes end in a half-circle.
     Rounded = 2,
 }

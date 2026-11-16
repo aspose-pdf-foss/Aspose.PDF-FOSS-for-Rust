@@ -2,13 +2,13 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `CaretSymbol` — see the canonical Aspose.PDF documentation.
+/// The symbol a caret annotation draws, if any.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum CaretSymbol {
-    /// `None`.
+    /// No symbol is drawn.
     #[default]
     None = 0,
-    /// `Paragraph`.
+    /// A pilcrow, marking a new paragraph.
     Paragraph = 1,
 }

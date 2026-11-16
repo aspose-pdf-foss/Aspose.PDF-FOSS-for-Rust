@@ -2,77 +2,77 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `AnnotationType` — see the canonical Aspose.PDF documentation.
+/// The annotation subtype, one variant per kind this crate models.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 #[allow(clippy::upper_case_acronyms)]
 pub enum AnnotationType {
-    /// `Text`.
+    /// A sticky note, shown as an icon until it is opened.
     #[default]
     Text = 0,
-    /// `Circle`.
+    /// An ellipse drawn within the annotation rectangle.
     Circle = 1,
-    /// `Polygon`.
+    /// A closed shape through a list of vertices.
     Polygon = 2,
-    /// `PolyLine`.
+    /// An open path through a list of vertices.
     PolyLine = 3,
-    /// `Line`.
+    /// A single straight line, optionally with end shapes and a caption.
     Line = 4,
-    /// `Square`.
+    /// A rectangle drawn within the annotation rectangle.
     Square = 5,
-    /// `FreeText`.
+    /// Text drawn directly on the page rather than in a pop-up.
     FreeText = 6,
-    /// `Highlight`.
+    /// A highlight over a run of text.
     Highlight = 7,
-    /// `Underline`.
+    /// An underline beneath a run of text.
     Underline = 8,
-    /// `Squiggly`.
+    /// A wavy underline beneath a run of text.
     Squiggly = 9,
-    /// `StrikeOut`.
+    /// A line struck through a run of text.
     StrikeOut = 10,
-    /// `Caret`.
+    /// A mark showing where text was inserted.
     Caret = 11,
-    /// `Ink`.
+    /// A freehand path, drawn from one or more lists of points.
     Ink = 12,
-    /// `Link`.
+    /// A region that follows a destination or runs an action.
     Link = 13,
-    /// `Popup`.
+    /// The pop-up window belonging to another annotation.
     Popup = 14,
-    /// `FileAttachment`.
+    /// An embedded file, shown as an icon.
     FileAttachment = 15,
-    /// `Sound`.
+    /// A sound to play, shown as an icon.
     Sound = 16,
-    /// `Movie`.
+    /// A movie to play.
     Movie = 17,
-    /// `Screen`.
+    /// A region that plays embedded media.
     Screen = 18,
-    /// `Widget`.
+    /// The on-page appearance of a form field.
     Widget = 19,
-    /// `Watermark`.
+    /// Content drawn at a fixed size regardless of how the page is scaled.
     Watermark = 20,
-    /// `TrapNet`.
+    /// Trapping information for prepress.
     TrapNet = 21,
-    /// `PrinterMark`.
+    /// A mark added for prepress, outside the trimmed page.
     PrinterMark = 22,
-    /// `Redaction`.
+    /// A region marked for its content to be removed.
     Redaction = 23,
-    /// `Stamp`.
+    /// A named or custom stamp.
     Stamp = 24,
-    /// `RichMedia`.
+    /// Embedded rich media.
     RichMedia = 25,
-    /// `Unknown`.
+    /// A subtype this crate does not model.
     Unknown = 26,
-    /// `PDF3D`.
+    /// An embedded three-dimensional artwork.
     PDF3D = 27,
-    /// `ColorBar`.
+    /// A printer mark showing process-colour patches.
     ColorBar = 28,
-    /// `TrimMark`.
+    /// A printer mark showing where the page is trimmed.
     TrimMark = 29,
-    /// `BleedMark`.
+    /// A printer mark showing the bleed boundary.
     BleedMark = 30,
-    /// `RegistrationMark`.
+    /// A printer mark used to align the printing plates.
     RegistrationMark = 31,
-    /// `PageInformation`.
+    /// A printer mark carrying page identification text.
     PageInformation = 32,
 }
 

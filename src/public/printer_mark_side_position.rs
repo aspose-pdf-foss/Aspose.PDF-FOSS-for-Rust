@@ -2,17 +2,17 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `PrinterMarkSidePosition` — see the canonical Aspose.PDF documentation.
+/// Which edge of the page a registration mark is placed on.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum PrinterMarkSidePosition {
-    /// `Top`.
+    /// Centred on the top edge of the page.
     #[default]
     Top = 0,
-    /// `Bottom`.
+    /// Centred on the bottom edge of the page.
     Bottom = 1,
-    /// `Left`.
+    /// Centred on the left edge of the page.
     Left = 2,
-    /// `Right`.
+    /// Centred on the right edge of the page.
     Right = 3,
 }

@@ -4,8 +4,7 @@
 //! The encoding format supplied to [`SoundSampleData`](crate::SoundSampleData).
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `SoundSampleDataEncodingFormat` — see the canonical Aspose.PDF
-/// documentation.
+/// How a sound's sample data is encoded.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum SoundSampleDataEncodingFormat {

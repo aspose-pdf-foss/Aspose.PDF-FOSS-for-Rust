@@ -2,15 +2,15 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `TextAlignment` — see the canonical Aspose.PDF documentation.
+/// Horizontal alignment carried by an annotation or its text style.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum TextAlignment {
-    /// `Left`.
+    /// Flush with the left edge.
     #[default]
     Left = 0,
-    /// `Center`.
+    /// Centred.
     Center = 1,
-    /// `Right`.
+    /// Flush with the right edge.
     Right = 2,
 }

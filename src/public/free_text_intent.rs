@@ -2,15 +2,15 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `FreeTextIntent` — see the canonical Aspose.PDF documentation.
+/// What a free text annotation is being used as.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum FreeTextIntent {
-    /// `Undefined`.
+    /// No intent; nothing is written.
     #[default]
     Undefined = 0,
-    /// `FreeTextCallout`.
+    /// A callout, drawn with a leader line to what it refers to.
     FreeTextCallout = 1,
-    /// `FreeTextTypeWriter`.
+    /// Typed text placed directly on the page, with no border.
     FreeTextTypeWriter = 2,
 }

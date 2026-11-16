@@ -2,37 +2,37 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `StampIcon` — see the canonical Aspose.PDF documentation.
+/// The named stamp a stamp annotation displays.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum StampIcon {
-    /// `Draft`.
+    /// Marks the document as a draft.
     #[default]
     Draft = 0,
-    /// `Approved`.
+    /// Marks the document as approved.
     Approved = 1,
-    /// `Experimental`.
+    /// Marks the document as experimental.
     Experimental = 2,
-    /// `NotApproved`.
+    /// Marks the document as not approved.
     NotApproved = 3,
-    /// `AsIs`.
+    /// Marks the document as supplied as it stands.
     AsIs = 4,
-    /// `Expired`.
+    /// Marks the document as expired.
     Expired = 5,
-    /// `NotForPublicRelease`.
+    /// Marks the document as not for public release.
     NotForPublicRelease = 6,
-    /// `Confidential`.
+    /// Marks the document as confidential.
     Confidential = 7,
-    /// `Final`.
+    /// Marks the document as final.
     Final = 8,
-    /// `Sold`.
+    /// Marks the item as sold.
     Sold = 9,
-    /// `Departmental`.
+    /// Marks the document as departmental.
     Departmental = 10,
-    /// `ForComment`.
+    /// Marks the document as circulated for comment.
     ForComment = 11,
-    /// `ForPublicRelease`.
+    /// Marks the document as cleared for public release.
     ForPublicRelease = 12,
-    /// `TopSecret`.
+    /// Marks the document as top secret.
     TopSecret = 13,
 }

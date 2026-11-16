@@ -2,13 +2,13 @@
 //!
 //! Variant ordinals match the canonical Aspose.PDF 26.4.0 enum.
 
-/// `ScalingMode` — see the canonical Aspose.PDF documentation.
+/// Whether a button icon keeps its proportions when scaled to its field.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 #[repr(i32)]
 pub enum ScalingMode {
-    /// `Proportional`.
+    /// Keep the icon's aspect ratio. Written as `P`.
     #[default]
     Proportional = 0,
-    /// `Anamorphic`.
+    /// Stretch the icon to fill the field, ignoring its aspect ratio. Written as `A`.
     Anamorphic = 1,
 }
